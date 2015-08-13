@@ -5,18 +5,22 @@ unit unit_teste;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, process, SysUtils;
+
+function soma(a, b: Integer): Integer; cdecl; export;
+function subtracao(a, b:Integer):Integer; cdecl; export;
 
 implementation
 
-Function Teste(Name:String):String; cdecl; export;
+function soma(a, b: Integer): Integer; cdecl; export;
 begin
-   result := Name + ' teste';
+  Result := a + b;
 end;
 
-exports
+function subtracao(a, b:Integer):Integer; cdecl; export;
+begin
+   Result := a - b;
+end;
 
-Teste;
-
+begin
 end.
-
